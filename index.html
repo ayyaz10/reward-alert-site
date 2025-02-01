@@ -4,6 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reward Alert</title>
+
+    <script
+      src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+      defer
+    ></script>
+
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function (OneSignal) {
+        await OneSignal.init({
+          appId: "01da3855-5dbd-4bae-a2a5-efe46c05df00",
+          promptOptions: {
+            slidedown: {
+              prompts: [
+                {
+                  text: {
+                    actionMessage:
+                      "The callout asking the user to opt-in. Up to 90 characters.",
+                    acceptButton: "Triggers the opt-in. Up to 15 characters.",
+                    cancelButton: "Cancels opt-in. Up to 15 characters.",
+                  },
+                },
+              ],
+            },
+          },
+          safari_web_id:
+            "web.onesignal.auto.220aec70-25f6-4973-9e9c-d6d04112ecc1",
+          notifyButton: {
+            enable: true,
+          },
+        });
+      });
+    </script>
   </head>
-  <body></body>
+  <body>
+    <h1>Reward Alert</h1>
+  </body>
 </html>
